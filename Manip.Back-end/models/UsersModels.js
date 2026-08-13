@@ -1,7 +1,7 @@
 const sequelize = require('./sequelize')
 const { DataTypes } = require('sequelize')
 
-const LoginUsuario = sequelize.define('Rota_segura_Online', {
+const Users = sequelize.define('Rota_segura_Online', {
     idLogin: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -25,4 +25,4 @@ const LoginUsuario = sequelize.define('Rota_segura_Online', {
     }
 })
 
-module.exports = LoginUsuario
+module.exports = Users

@@ -1,16 +1,16 @@
-const UsersModels = require('./models/LoginUserModels.js')
+const UsersModels = require('./models/UsersModels.js')
 const { where } = require('sequelize')
 
 
-function AllUsers() {
+function GetAllUsers() {
     return UsersModels.findAll()
 }
 
-function UserID(id) {
+function GetUsersID(id) {
     return UsersModels.findByPk(id)
 }
 
-function seachEmail(){
+function searchEmail(){
     UsersModels.findOne({
         where:{
             email: email
@@ -23,8 +23,8 @@ function createUser(objUser) {
 }
 
 module.exports = {
-    AllUsers,
-    UserID,
-    seachEmail,
+    GetAllUsers,
+    GetUsersID,
+    searchEmail,
     createUser
 }
