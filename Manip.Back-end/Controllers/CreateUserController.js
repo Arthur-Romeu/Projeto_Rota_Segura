@@ -4,12 +4,12 @@ const bcrypt = require('bcrypt')
 async function createNewUser(req, res) {
     const emailUsers = req.body
 
-    const emailExisting = UsersServices.searchEmail(emailUsers.email)
+    const emailAlreadyExists = UsersServices.searchEmail(emailUsers.email)
 
-    if (emailExisting) {
-        res.status(400).json({
-            statuscode: 400,
-            message: "O email já existe!"
+    if (emailAlreadyExists) {
+        res.status(401).json({
+            statuscode: 401,
+            message: "O email já extiste."
         })
     }
 
@@ -22,12 +22,20 @@ async function createNewUser(req, res) {
         senha: criptography
     })
 
-    return(
-        res.status(200).json({
-            statuscode: 200,
-            message: "Usuário criado com sucesso!"
+    if(newUser.senha < 6 || newUser.nome == '' || newUser.email == ''){
+        res.status(401).json({
+            statuscode:401,
+            message: "A senha é simples; nome e email são campos obrigatórios! Crie sua conta novamente."
         })
-    )
-} 
+    }
+    else{
+        return(
+            res.status(200).json({
+                statuscode: 200,
+                message: "Usuário criado com sucesso!"
+            })
+        )
+    }  
+}
 
 module.exports = createNewUser
