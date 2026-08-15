@@ -1,8 +1,8 @@
+const loginController = require('../Controllers/LoginController')
+const Authentication = require('../Middleware/authentication')
 const express = require('express')
-const loginRouter = express.Router
-const LoginController = require('./Controllers/LoginController.js')
-const Authentication = require('./Middleware/authetication.js')
+const loginRouter = express.Router()
 
-loginRouter.post('/', Authentication, LoginController)
+loginRouter.post('/login', Authentication, loginController)
 
 module.exports = loginRouter

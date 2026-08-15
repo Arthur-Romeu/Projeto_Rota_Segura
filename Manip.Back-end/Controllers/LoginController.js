@@ -1,44 +1,45 @@
-const UserServices = require('./Services/UsersServices.js')
+const UsersServices = require('../Services/UsersServices')
 const bcrypt = require('bcrypt')
 const JWT = require('jsonwebtoken')
 
 async function login(req, res) {
     const userObject = req.body
 
-    const userFound = await UserServices.searchEmail(userObject.email)
-
-    if (!userFound) {
-        res.status(401).json({
-            statuscode: 401, 
-            message: "A conta procurada não existe."
+    if (!userObject.Email || !userObject.Senha) {
+        return res.status(400).json({
+            statuscode: 400,
+            message: "Email e senha são obrigatórios."
         })
-        return
     }
 
-    const passwordCompare = await bcrypt.compare(userObject.senha, userFound.senha)
+    const userFound = await UsersServices.searchEmail(userObject.Email)
+
+    if (!userFound) {
+        return res.status(401).json({
+            statuscode: 401,
+            message: "A conta procurada não existe."
+        })
+    }
+
+    const passwordCompare = await bcrypt.compare(userObject.Senha, userFound.Senha)
 
     if (passwordCompare) {
         const token = JWT.sign({
-            email: userFound.email,
-            senha: userFound.senha
-        }, process.env.CHAVE_SECRETA, { expiresIn: '30d'}
-        )
+            Email: userFound.Email,
+            Senha: userFound.Senha
+        }, process.env.CHAVE_SECRETA, { expiresIn: '30d' })
 
-        return(
-            res.status(200).json({
-                statuscode:200,
-                message: "Login feito com sucesso!"
-            })
-        )
-    }
-
-    else{
-        res.status(401).json({
-            statuscode: 401,
-            message: "email ou senha incorreta"
+        return res.status(200).json({
+            statuscode: 200,
+            message: "Login feito com sucesso!",
+            token
         })
     }
 
+    return res.status(401).json({
+        statuscode: 401,
+        message: "email ou senha incorreta"
+    })
 }
 
 module.exports = login

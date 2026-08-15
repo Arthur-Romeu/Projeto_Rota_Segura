@@ -1,19 +1,18 @@
 function UserValidationMiddleware(req, res, next) {
-    if (!req.body.email || !req.body.senha || !req.body.passwordConfirmation || !req.body.nome) {
-        res.status(401).json({
+    if (!req.body.Nome || !req.body.Email || !req.body.Senha || !req.body.ConfirmacaoSenha) {
+        return res.status(401).json({
             statuscode: 401,
-            message: "Email, senha, corfimação da senha e nome são campos obrigatórios!"
+            message: "Nome, Email, senha e confirmação da senha são campos obrigatórios!"
         })
-        return
     }
 
-    if (req.body.senha !== req.body.passwordConfirmation) {
-        res.status(401).json({
+    if (req.body.Senha !== req.body.ConfirmacaoSenha) {
+        return res.status(401).json({
             statuscode: 401,
-            message:"A senha confirmada e senha não estão iguais!"
+            message: "A senha confirmada e a senha não estão iguais!"
         })
-        return
     }
+
     next()
 }
 

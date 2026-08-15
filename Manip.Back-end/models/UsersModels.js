@@ -1,29 +1,41 @@
-const sequelize = require('./sequelize')
+const sequelize = require('./ConfigBanco')
 const { DataTypes } = require('sequelize')
 
-const Users = sequelize.define('Rota_segura_Online', {
+const Users = sequelize.define('rota_segura_online', {
     idLogin: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
-        primary_Key: true
+        primaryKey: true
     },
 
-    Nome:{
+    Nome: {
         type: DataTypes.STRING(200),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
     },
 
     Email: {
         type: DataTypes.STRING(200),
+        unique: true,
         allowNull: false,
-        unique: true
+        validate: {
+            notEmpty: true,
+            isEmail: true
+        }
     },
 
     Senha: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING(255),
         allowNull: false,
-        DefaultValues: '$2a$12$3bCAO/E/TI0vFlEwc2rDY.7y2UiLhUqES8.HKr9P1wONXIsRuz3mW'
+        validate: {
+            notEmpty: true
+        }
     }
+}, {
+    tableName: 'rota_segura_online',
+    timestamps: false
 })
 
 module.exports = Users

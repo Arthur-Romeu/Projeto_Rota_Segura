@@ -1,13 +1,10 @@
-const UsersControllers = require('./Controller/UsersControllers.js')
-const UserMiddleware = require('./Middleware/UserMiddleware.js')
-const CreateUserController = require('./Controllers/CreateUserController.js')
+const UsersControllers = require('../Controllers/UsersControllers')
+const UserMiddleware = require('../Middleware/UserMiddleware')
 const express = require('express')
-const userRouter = express.Router
+const userRouter = express.Router()
 
-userRouter.get('/', UsersControllers.getAllUsers)
-
+userRouter.get('/', UsersControllers.getAllUser)
 userRouter.get('/:id', UsersControllers.getOneUser)
-
-userRouter.post('/', UserMiddleware, CreateUserController.createNewUser)
+userRouter.post('/', UserMiddleware, UsersControllers.createNewUser)
 
 module.exports = userRouter

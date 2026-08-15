@@ -1,6 +1,5 @@
-const UsersModels = require('./models/UsersModels.js')
+const UsersModels = require('../models/UsersModels')
 const { where } = require('sequelize')
-
 
 function GetAllUsers() {
     return UsersModels.findAll()
@@ -10,16 +9,16 @@ function GetUsersID(id) {
     return UsersModels.findByPk(id)
 }
 
-function searchEmail(){
-    UsersModels.findOne({
-        where:{
-            email: email
+function searchEmail(email) {
+    return UsersModels.findOne({
+        where: {
+            Email: email
         }
-}) 
+    })
 }
 
 function createUser(objUser) {
-    UsersModels.create(objUser)
+    return UsersModels.create(objUser)
 }
 
 module.exports = {

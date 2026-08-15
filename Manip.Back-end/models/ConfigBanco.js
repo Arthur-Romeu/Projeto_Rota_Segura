@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize')
+require('dotenv').config()
 
 const sequelize = new Sequelize(process.env.BANCO, process.env.USUARIO, process.env.SENHA, {
     host: process.env.HOST,
