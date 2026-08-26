@@ -4,5 +4,6 @@ const prioridadeRouter = express.Router()
 
 prioridadeRouter.get('/', PrioridadesController.GetAllRegions)
 prioridadeRouter.get('/:id', PrioridadesController.GetOneRegion)
+prioridadeRouter.post('/', PrioridadesController.createPrioridades)
 
 module.exports = prioridadeRouter

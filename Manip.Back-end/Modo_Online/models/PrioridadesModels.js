@@ -8,6 +8,14 @@ const Prioridades = sequelize.define('rota_segura_online', {
         primaryKey: true
     },
 
+    id: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
+
     Via: {
         type: DataTypes.STRING(150),
         allowNull: false,
@@ -16,7 +24,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
-    Nivel_Policiamento: {
+    Nivel: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
@@ -24,7 +32,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
-    Infraestrutura_Local: {
+    Sinal_Policiamento: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
@@ -32,10 +40,10 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
-    Iluminacao:{
-        type: DataTypes.DECIMAL,
+    Sinal_Infraestrutura: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate:{
+        validate: {
             notEmpty: true
         }
     },
