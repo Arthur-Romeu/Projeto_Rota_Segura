@@ -1,0 +1,250 @@
+[
+  {
+    "id": "t06",
+    "via": "Travessa QNM 13/15",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t09",
+    "via": "Via interna QNN",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t12",
+    "via": "Via QNN 24",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t16",
+    "via": "Via de ligação Sul",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t19",
+    "via": "METROCEIL-QNN4",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t26",
+    "via": "QNM 5 CJ  - QNM 5",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t27",
+    "via": "QNM 5-CEM03",
+    "nivel": 1,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 4
+  },
+  {
+    "id": "t03",
+    "via": "Av. Hélio Prates",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t04",
+    "via": "Via interna QNM",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t07",
+    "via": "Via QNM",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t08",
+    "via": "Via Leste",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t11",
+    "via": "Via do Metrô",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t13",
+    "via": "Via QNN",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t14",
+    "via": "Via QNN–Guariroba",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t18",
+    "via": "METROCEILANDIA-QNM3CONJI",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t20",
+    "via": "QNN 4-QNN3",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t22",
+    "via": "CEM03-QNM5CJI",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t28",
+    "via": "CEM 03 - QNM 23",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t31",
+    "via": "QNP5-SESC",
+    "nivel": 2,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 2
+  },
+  {
+    "id": "t01",
+    "via": "Acesso Terminal–Metrô",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t02",
+    "via": "Av. Hélio Prates",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t05",
+    "via": "Via N1",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t10",
+    "via": "Via do Metrô",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t15",
+    "via": "Av. Hélio Prates",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t17",
+    "via": "QNM 17-HRC",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t21",
+    "via": "QNM 3-PTRAB",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t23",
+    "via": "CEM03-QNM 5 CJ O",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t24",
+    "via": "QNM 5 CJ O/ EQNM 3/5",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t25",
+    "via": "EQNM 3/5- QNM 5 CJ I",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t29",
+    "via": "EQNM 3/5-PRAÇATB",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  },
+  {
+    "id": "t30",
+    "via": "PRAÇATB-QNM 5 CJ O",
+    "nivel": 3,
+    "sinal_policiamento": 0,
+    "sinal_infraestrutura": 0,
+    "pontuacao": 0
+  }
+]

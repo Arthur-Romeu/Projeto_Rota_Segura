@@ -78,6 +78,7 @@ async function createPrioridades(req, res) {
         return res.status(201).json({
             statuscode: 201,
             dados: Array.isArray(req.body) ? resultado : resultado[0],
+            json: resultado
         })
     } catch (error) {
         return res.status(400).json({
