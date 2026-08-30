@@ -1,14 +1,14 @@
 const sequelize = require('./ConfigBanco')
 const { DataTypes } = require('sequelize')
 
-const Prioridades = sequelize.define('rota_segura_online', {
+const Trechos = sequelize.define('rota_segura_online', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
 
-    idPrioridades: {
+    idTrechos: {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
@@ -24,7 +24,23 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
-    Nivel: {
+    De: {
+        type: DataTypes.STRING(150),
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
+
+    Para: {
+        type: DataTypes.STRING(150),
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
+
+    Comprimento_m: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
@@ -32,32 +48,42 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
-    Sinal_Policiamento: {
-        type: DataTypes.INTEGER,
+    Lat_origem:{
+        type: DataTypes.FLOAT(15),
         allowNull: false,
         validate: {
             notEmpty: true
         }
-    },
+    } ,
 
-    Sinal_Infraestrutura: {
-        type: DataTypes.INTEGER,
+    Lng_origem:{
+        type: DataTypes.FLOAT(15),
         allowNull: false,
         validate: {
             notEmpty: true
         }
-    },
+    } ,
 
-    Pontuacao:{
-        type: DataTypes.INTEGER,
+    Lat_destino:{
+        type: DataTypes.FLOAT(15),
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    } ,
+
+    Lng_destino:{
+        type: DataTypes.FLOAT(15),
         allowNull: false,
         validate: {
             notEmpty: true
         }
     } 
+
+
 }, {
-    tableName: 'prioridades',
+    tableName: 'trechos',
     timestamps: false
 })
 
-module.exports = Prioridades
+module.exports = Trechos

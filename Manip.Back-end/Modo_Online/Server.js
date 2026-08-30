@@ -1,6 +1,8 @@
 const sequelize = require('./models/ConfigBanco')
 const UserModels = require('./models/UsersModels')
 const PrioridadesModels = require('./models/PrioridadesModels')
+const TrechosModels = require('./models/TrechosModels')
+const TransicaoUserModels = require('./models/TransicaoUserModels')
 
 function Server(aplication) {
     aplication.listen(3000, ()=>{

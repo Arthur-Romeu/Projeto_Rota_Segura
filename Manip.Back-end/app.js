@@ -8,6 +8,8 @@ const app = express()
 const loginRouter = require('./Modo_Online/Routers/loginRouter')
 const userRouter = require('./Modo_Online/Routers/userRouter')
 const prioridadeRouter = require('./Modo_Online/Routers/prioridadeRouter')
+const trechoRouter = require('./Modo_Online/Routers/trechoRouter')
+const transicaoUserRouter = require('./Modo_Online/Routers/transicaoUserRouter')
 const Server = require('./Modo_Online/Server')
 
 app.use(express.json())
@@ -25,5 +27,9 @@ app.use('/usuarios', userRouter)
 app.use('/login', loginRouter)
 
 app.use('/bairro', prioridadeRouter)
+
+app.use('/trecho', trechoRouter)
+
+app.use('/transicao', transicaoUserRouter)
 
 Server(app)

@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 async function getAllUser(req, res) {
     const users = await UsersServices.GetAllUsers()
 
-    let arrayUsers = users.map(user =>{
+    const arrayUsers = users.map(user =>{
         return user.dataValues
     })
 

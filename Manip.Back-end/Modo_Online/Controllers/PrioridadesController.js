@@ -49,7 +49,7 @@ async function createPrioridades(req, res) {
     const listaPrioridades = Array.isArray(req.body) ? req.body : [req.body]
 
     const prioridades = listaPrioridades.map((prioridade) => ({
-        id: prioridade.id,
+        idPrioridades: prioridade.id,
         Via: prioridade.Via ?? prioridade.via,
         Nivel: prioridade.Nivel ?? prioridade.nivel,
         Sinal_Policiamento: prioridade.Sinal_Policiamento ?? prioridade.sinal_policiamento,
@@ -58,7 +58,7 @@ async function createPrioridades(req, res) {
     }))
 
     const camposObrigatorios = [
-        'id',
+        'idPrioridades',
         'Via',
         'Nivel',
         'Sinal_Policiamento',

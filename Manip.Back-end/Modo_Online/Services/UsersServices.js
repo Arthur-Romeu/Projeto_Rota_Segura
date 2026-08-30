@@ -8,22 +8,13 @@ function GetUsersID(id) {
     return UsersModels.findByPk(id)
 }
 
-function searchEmail(email) {
-    return UsersModels.findOne({
-        where:{
-            Email: email
-        }
-    })
-}
 
-
-function createUser(objUser) {
-    return UsersModels.create(objUser)
+function createUser(objData) {
+    return UsersModels.create(objData)
 }
 
 module.exports = {
     GetAllUsers,
     GetUsersID,
-    searchEmail,
     createUser
 }
