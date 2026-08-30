@@ -2,7 +2,7 @@ const TransicaoUserControllers = require('../Controllers/TransicaoUserController
 const mysql = require('mysql2/promise')
 const express = require('express')
 const transicaoRouter = express.Router()
-require('dotenv').config({path: '.env'})
+require('dotenv').config({path: 'dados.env'})
 const cron = require('node-cron')
 
 const pool = mysql.createPool({
