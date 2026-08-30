@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Rota Segura Ceilândia</title>
+</head>
+<body>
+    <h1 class="Titulo_inicial">URL's para uso</h1>
+
+    <h4 class="subtitulo">URL página inicial</h4>
+    <a href="http://localhost:3000/">Home</a>
+
+
+    <h3 class="Titulo">URL página de busca dos usuários</h3>
+
+    <h4 class="subtitulo">Método HTTP: GET</h4>
+    <p>Busca todos os usuários</p>
+    <a href="http://localhost:3000/usuarios">buscar/usuarios</a>
+
+
+    <h4 class="subtitulo">Método HTTP: GET/id</h4>
+    <p>Busca os usuários por id</p>
+    <a href="http://localhost:3000/usuarios/id">usuarios/id</a>
+
+
+    <h4 class="subtitulo">Método HTTP: POST</h4>
+    <p>Cria um usuário. Necessário de nome, email, senha e da confirmação de sua senha criada</p>
+    <a href="http://localhost:3000/usuarios">criar/conta/usuario</a>
+
+
+    <h4 class="subtitulo">Método HTTP: POST</h4>
+    <p>Login do usuário a partir de sua criação pré-existente</p>
+    <a href="http://localhost:3000/login">login</a>
+    
+
+    <h3 class="Titulo">URL de busca das prioridades</h3>
+
+    <h4 class="subtitulo">Método HTTP: GET</h4>
+    <p>Busca todos as prioridades</p>
+    <a href="http://localhost:3000/bairro">buscar/bairros</a>
+
+
+    <h4 class="subtitulo">Método HTTP: GET/id</h4>
+    <p>Busca os usuários por id</p>
+    <a href="http://localhost:3000/bairro/id">bairro/id</a>
+
+
+    <h3 class="Titulo">URL de busca dos trechos</h3>
+
+    <h4 class="subtitulo">Método HTTP: GET</h4>
+    <p>Busca todos os trechos</p>
+    <a href="http://localhost:3000/trecho">buscar/trechos</a>
+
+
+    <h4 class="subtitulo">Método HTTP: GET/id</h4>
+    <p>Busca os trecho por id</p>
+    <a href="http://localhost:3000/trecho/id">trecho/id</a>
+
+
+    <h3 class="Titulo">URL de busca das transições</h3>
+
+    <h4 class="subtitulo">Método HTTP: GET</h5>
+    <p>Busca todos os trechos</p>
+    <a href="http://localhost:3000/transicao">transicoes</a>
+
+
+    <h4 class="subtitulo">Método HTTP: GET/id</h4>
+    <p>Busca os usuários por id</p>
+    <a href="http://localhost:3000/transicao/id">transicao/id</a>
+
+
+    <h4 class="subtitulo">Método HTTP: POST</h4>
+    <p>Criar um dado de transição do usuário. Salva dados de nome, o lugar de origem (De) e local de destino (Para)</p>
+    <p>Estes dados serão deletado caso o usuário aperte em sair diretamente ou após um intervalo de 10 minutos sem uso</p>
+    <a href="http://localhost:3000/transicao">transicao</a>
+
+    <script src="app.js"></script>
+</body>
+</html>

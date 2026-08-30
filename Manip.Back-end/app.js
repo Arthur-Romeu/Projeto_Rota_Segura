@@ -1,5 +1,5 @@
 const sequelize = require('./Modo_Online/models/ConfigBanco')
-require('dotenv').config({ path: "dados.env" })
+require('dotenv').config({ path: ".env" })
 
 const express = require('express')
 const cors = require('cors')

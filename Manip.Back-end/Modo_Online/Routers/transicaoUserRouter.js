@@ -2,7 +2,7 @@ const TransicaoUserControllers = require('../Controllers/TransicaoUserController
 const mysql = require('mysql2/promise')
 const express = require('express')
 const transicaoRouter = express.Router()
-require('dotenv').config({path: 'dados.env'})
+require('dotenv').config({path: '../../.env'})
 const cron = require('node-cron')
 
 const pool = mysql.createPool({
@@ -22,7 +22,7 @@ transicaoRouter.delete('logout/:transicaoId', async (req, res) =>{
     const { transicaoId } = req.params
 
     try {
-    const [result] = pool.query('DELETE FROM usuarios WHERE id = ?', [transicaoId])
+    const [result] = await pool.query('DELETE FROM usuarios WHERE id = ?', [transicaoId])
 
     if (result.affectedRows === 0) {
       return res.status(404).json({ 
@@ -46,7 +46,7 @@ transicaoRouter.delete('logout/:transicaoId', async (req, res) =>{
 
 cron.schedule('*/5 * * * *', async () => {
   try {
-    const [result] = pool.query(
+    const [result] = await pool.query(
       `DELETE FROM transicao WHERE ultima_atividade < NOW() - INTERVAL 10 MINUTE`
     );
     console.log(`Limpeza concluída. Usuários deletados: ${result.affectedRows}`);
