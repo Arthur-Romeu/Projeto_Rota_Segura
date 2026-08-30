@@ -1,23 +1,26 @@
 const PrioridadesServices = require('../Services/PrioridadesServices')
 
 async function GetAllRegions(req, res) {
-    const regions = await PrioridadesServices.getAllRegions()
+    try {
+        const regions = await PrioridadesServices.getAllRegions()
+        const arrayRegions = regions.map((region) => region.dataValues)
 
-    let arrayRegions = regions.map(region =>{
-        return regions.dataValues
-    })
+        if (arrayRegions.length > 0) {
+            return res.status(200).json({
+                statuscode: 200,
+                dados: arrayRegions
+            })
+        }
 
-    if (arrayRegions > 0) {
-        res.status(201).json({
-            statuscode: 201,
-            dados: arrayRegions
+        return res.status(404).json({
+            statuscode: 404,
+            message: 'As regiões não foram implementadas!'
         })
-    }
-
-    else{
-        res.status(400).json({
-            statuscode: 400,
-            message: "As regiões não foram implementadas!"
+    } catch (error) {
+        return res.status(500).json({
+            statuscode: 500,
+            message: 'Erro ao listar as prioridades.',
+            erro: error.message
         })
     }
 }
@@ -43,8 +46,9 @@ async function GetOneRegion(req, res) {
 }
 
 async function createPrioridades(req, res) {
-    const prioridadeData = Array.isArray(req.body) ? req.body : [req.body]
-    const prioridades = prioridadeData.map(prioridade => ({
+    const listaPrioridades = Array.isArray(req.body) ? req.body : [req.body]
+
+    const prioridades = listaPrioridades.map((prioridade) => ({
         id: prioridade.id,
         Via: prioridade.Via ?? prioridade.via,
         Nivel: prioridade.Nivel ?? prioridade.nivel,
@@ -61,11 +65,14 @@ async function createPrioridades(req, res) {
         'Sinal_Infraestrutura',
         'Pontuacao'
     ]
-    const dadosInvalidos = prioridades.some(prioridade => camposObrigatorios.some(campo =>
-        prioridade[campo] === undefined || prioridade[campo] === null || prioridade[campo] === ''
-    ))
 
-    if (dadosInvalidos) {
+    const temCampoVazio = prioridades.some((prioridade) => {
+        return camposObrigatorios.some((campo) => {
+            return prioridade[campo] === undefined || prioridade[campo] === null || prioridade[campo] === ''
+        })
+    })
+
+    if (temCampoVazio) {
         return res.status(400).json({
             statuscode: 400,
             message: 'Todos os campos da prioridade são obrigatórios.'
@@ -77,8 +84,7 @@ async function createPrioridades(req, res) {
 
         return res.status(201).json({
             statuscode: 201,
-            dados: Array.isArray(req.body) ? resultado : resultado[0],
-            json: resultado
+            dados: Array.isArray(req.body) ? resultado : resultado
         })
     } catch (error) {
         return res.status(400).json({

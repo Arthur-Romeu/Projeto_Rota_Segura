@@ -5,7 +5,7 @@ async function getAllUser(req, res) {
     const users = await UsersServices.GetAllUsers()
 
     let arrayUsers = users.map(user =>{
-        return users.dataValues
+        return user.dataValues
     })
 
     if (arrayUsers.length > 0) {
