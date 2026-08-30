@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-require('dotenv').config("../../.env")
+require('dotenv').config("../../arquivo.env")
 
 const sequelize = new Sequelize(process.env.BANCO, process.env.USUARIO, process.env.SENHA, {
     host: process.env.HOST,
