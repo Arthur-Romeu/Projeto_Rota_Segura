@@ -4,7 +4,7 @@ const sequelize = require('./ConfigBanco')
 const { DataTypes } = require('sequelize')
 
 // Define o model dos trechos de rota.
-const Trechos = sequelize.define('rota_segura_online', {
+const Trechos = sequelize.define('Trechos', {
     // Identificador interno do registro.
     id: {
         type: DataTypes.INTEGER,

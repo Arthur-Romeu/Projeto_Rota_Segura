@@ -4,7 +4,7 @@ const sequelize = require('./ConfigBanco')
 const { DataTypes } = require('sequelize')
 
 // Define o model que registra transições de usuários.
-const Transicao = sequelize.define('rota_segura_online', {
+const Transicao = sequelize.define('Transicao', {
     // Identificador interno do registro.
     id: {
         type: DataTypes.INTEGER,

@@ -4,7 +4,7 @@ const sequelize = require('./ConfigBanco')
 const { DataTypes } = require('sequelize')
 
 // Define o model das prioridades de rota.
-const Prioridades = sequelize.define('rota_segura_online', {
+const Prioridades = sequelize.define('Prioridades', {
     // Identificador interno do registro.
     id: {
         type: DataTypes.INTEGER,

@@ -1,8 +1,11 @@
 // Importa o construtor de conexões do Sequelize.
 const Sequelize = require('sequelize')
+const path = require('path')
 
 // Carrega as variáveis de ambiente do arquivo .env.
-require('dotenv').config("../../.env")
+require('dotenv').config({
+    path: path.resolve(__dirname, '../../.env')
+})
 
 // Cria a conexão usando banco, usuário e senha configurados.
 const sequelize = new Sequelize(process.env.BANCO, process.env.USUARIO, process.env.SENHA, {

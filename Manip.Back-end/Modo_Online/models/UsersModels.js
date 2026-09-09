@@ -5,7 +5,7 @@ const sequelize = require('./ConfigBanco')
 const { DataTypes } = require('sequelize')
 
 // Define o model que representa a tabela de usuários.
-const Users = sequelize.define('rota_segura_online', {
+const Users = sequelize.define('Users', {
 // Define as colunas da tabela.
     idLogin: {
         // Usa números inteiros para identificar o usuário.

@@ -10,32 +10,25 @@ const TrechosModels = require('./models/TrechosModels')
 const TransicaoUserModels = require('./models/TransicaoUserModels')
 
 // Inicializa o servidor HTTP e a estrutura do banco.
-function Server(aplication) {
-    // Escuta requisições na porta 3000.
-    aplication.listen(3000, ()=>{
-        // Informa no terminal que o servidor está disponível.
-        console.log('O servidor foi iniciado na porta 3000. Acesse http://localhost:3000')
-    })
+async function Server(aplication) {
+    try {
+        // Testa a conexão com o banco de dados.
+        await sequelize.authenticate()
+        console.log("Conexão feita com sucesso")
 
+        // Cria ou ajusta todas as tabelas conforme os modelos registrados.
+        await sequelize.sync({alter: true})
+        console.log("Tabelas criadas/atualizadas com sucesso")
 
-    // Testa a conexão com o banco de dados.
-    sequelize.authenticate()
-        .then(()=>{
-            // Confirma que a conexão foi estabelecida.
-            console.log("Conexão feita com sucesso")
-
-            // Cria ou ajusta as tabelas conforme os modelos.
-            sequelize.sync({alter: true}).then(()=>{
-                // Confirma a sincronização das tabelas.
-                console.log("Tabelas criadas/atualizadas com sucesso")
-            })
+        // Escuta requisições somente depois que o banco está pronto.
+        aplication.listen(3000, ()=>{
+            console.log('O servidor foi iniciado na porta 3000. Acesse http://localhost:3000')
         })
-
-        // Trata falhas na conexão com o banco.
-        .catch(err =>{
-            // Exibe o erro ocorrido no terminal.
-            console.log("Paia, não conectou ao banco de dados " + err)
-        })
+    } catch (err) {
+        // Exibe a falha completa de conexão ou sincronização.
+        console.error("Falha ao conectar ou sincronizar o banco de dados:", err)
+        process.exitCode = 1
+    }
 }
 
 // Expõe a função de inicialização para o arquivo principal.
