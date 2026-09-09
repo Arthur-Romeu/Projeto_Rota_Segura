@@ -1,13 +1,18 @@
+// Importa a conexão com o banco.
 const sequelize = require('./ConfigBanco')
+// Importa os tipos de dados do Sequelize.
 const { DataTypes } = require('sequelize')
 
+// Define o model das prioridades de rota.
 const Prioridades = sequelize.define('rota_segura_online', {
+    // Identificador interno do registro.
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
 
+    // Identificador original da prioridade.
     idPrioridades: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -16,6 +21,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
+    // Nome da via avaliada.
     Via: {
         type: DataTypes.STRING(150),
         allowNull: false,
@@ -24,6 +30,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
+    // Nível de prioridade.
     Nivel: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -32,6 +39,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
+    // Indicador de policiamento.
     Sinal_Policiamento: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -40,6 +48,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
+    // Indicador de infraestrutura.
     Sinal_Infraestrutura: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -48,6 +57,7 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     },
 
+    // Pontuação final da via.
     Pontuacao:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -56,8 +66,11 @@ const Prioridades = sequelize.define('rota_segura_online', {
         }
     } 
 }, {
+    // Define o nome físico da tabela.
     tableName: 'prioridades',
+    // Desativa colunas automáticas de data.
     timestamps: false
 })
 
+// Exporta o model de prioridades.
 module.exports = Prioridades
