@@ -8,6 +8,8 @@ const PrioridadesModels = require('./models/PrioridadesModels')
 const TrechosModels = require('./models/TrechosModels')
 // Carrega o modelo de transições de usuários.
 const TransicaoUserModels = require('./models/TransicaoUserModels')
+// Carrega o modelo de avaliações.
+const AvaliacoesModels = require('./models/AvaliacoesModels')
 
 // Inicializa o servidor HTTP e a estrutura do banco.
 async function Server(aplication) {

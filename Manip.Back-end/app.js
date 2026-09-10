@@ -20,6 +20,8 @@ const prioridadeRouter = require('./Modo_Online/Routers/prioridadeRouter')
 const trechoRouter = require('./Modo_Online/Routers/trechoRouter')
 // Importa as rotas de transição de usuários.
 const transicaoUserRouter = require('./Modo_Online/Routers/transicaoUserRouter')
+// Importa as rotas de avaliações.
+const avaliacaoRouter = require('./Modo_Online/Routers/avaliacaoRouter')
 // Importa a função que inicializa o servidor online.
 const Server = require('./Modo_Online/Server')
 
@@ -51,6 +53,9 @@ app.use('/trecho', trechoRouter)
 
 // Monta as rotas de transição no caminho /transicao.
 app.use('/transicao', transicaoUserRouter)
+
+// Monta as rotas de usuários no caminho /usuarios.
+app.use('/avaliacao', avaliacaoRouter)
 
 // Inicia o servidor e a conexão com o banco.
 Server(app)
